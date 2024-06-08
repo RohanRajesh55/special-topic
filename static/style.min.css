@@ -1,0 +1,49 @@
+.registration-form {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  gap: 50px;
+}
+.registration-form .user-name,
+.registration-form .user-address,
+.registration-form .user-email,
+.registration-form .user-password,
+.registration-form .user-confirm-password {
+  position: relative;
+}
+.registration-form .user-name input,
+.registration-form .user-address input,
+.registration-form .user-email input,
+.registration-form .user-password input,
+.registration-form .user-confirm-password input {
+  position: relative;
+  padding: 10px !important;
+}
+.registration-form .user-name input:focus ~ label,
+.registration-form .user-name input:valid ~ label,
+.registration-form .user-address input:focus ~ label,
+.registration-form .user-address input:valid ~ label,
+.registration-form .user-email input:focus ~ label,
+.registration-form .user-email input:valid ~ label,
+.registration-form .user-password input:focus ~ label,
+.registration-form .user-password input:valid ~ label,
+.registration-form .user-confirm-password input:focus ~ label,
+.registration-form .user-confirm-password input:valid ~ label {
+  top: -10px !important;
+  font-size: 10px;
+  background: #fff;
+  padding: 0 3px;
+}
+.registration-form .user-name label,
+.registration-form .user-address label,
+.registration-form .user-email label,
+.registration-form .user-password label,
+.registration-form .user-confirm-password label {
+  position: absolute;
+  top: 9px;
+  left: 10px;
+  pointer-events: none;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}

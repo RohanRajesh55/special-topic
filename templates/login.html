@@ -1,0 +1,46 @@
+{%extends 'base.html'%} {% block title %}Log in{% endblock %} {% block content
+%}
+
+<!-- registration page -->
+<div class="container mt-5">
+  <h1 class="h1 text-center my-5">Login Form</h1>
+  <form
+    class="d-flex registration-form"
+    action="{{url_for('login')}}"
+    method="post"
+  >
+    <!-- user-email -->
+    <div class="user-email">
+      <input
+        required
+        value="{{user_email}}"
+        class="form-control me-2"
+        type="email"
+        name="user-email"
+      />
+      <label for="user-email">Enter your email</label>
+    </div>
+
+    <!-- user-password -->
+    <div class="user-password">
+      <input
+        required
+        value="{{user_password}}"
+        class="form-control me-2"
+        type="password"
+        name="user-password"
+      />
+      <label for="user-password">Enter password</label>
+    </div>
+
+    <button type="submit" class="btn btn-outline-primary">Sign In</button>
+  </form>
+
+  {%if succ_msg%}
+  <span class="text-success fs-3" style="text-align: center">{{succ_msg}}</span>
+  {%endif%} {%if err_msg%}
+  <span class="text-danger fs-3" style="text-align: center">{{err_msg}}</span>
+  {%endif%}
+</div>
+
+{% endblock %}
