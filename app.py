@@ -43,5 +43,13 @@ def add_property():
     cur.close()
     return "Property added successfully!"
 
+@app.route('/properties')
+def properties():
+    cur = mysql.connection.cursor()
+    cur.execute("SELECT * FROM properties")
+    properties = cur.fetchall()
+    cur.close()
+    return render_template('properties.html', properties=properties)
+
 if __name__ == '__main__':
     app.run(debug=True)

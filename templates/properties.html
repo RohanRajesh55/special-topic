@@ -1,0 +1,45 @@
+<!-- properties.html -->
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Properties</title>
+    <style>
+      .property {
+        border: 1px solid #ddd;
+        padding: 10px;
+        margin-bottom: 20px;
+      }
+      .property img {
+        width: 100px;
+        height: 100px;
+        margin-right: 10px;
+      }
+      .property.details {
+        display: inline-block;
+        vertical-align: top;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Properties</h1>
+    {% for property in properties %}
+    <div class="property">
+      <img
+        src="data:image/jpeg;base64,{{ property[9] }}"
+        alt="Property Image"
+      />
+      <div class="details">
+        <h2>{{ property[1] }}</h2>
+        <p>Number of Rooms: {{ property[2] }}</p>
+        <p>Address: {{ property[3] }}</p>
+        <p>City: {{ property[4] }}</p>
+        <p>State: {{ property[5] }}</p>
+        <p>Pincode: {{ property[6] }}</p>
+        <p>Country: {{ property[7] }}</p>
+        <p>Price: {{ property[8] }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </body>
+</html>
